@@ -10,6 +10,8 @@ st.set_page_config(layout="wide", initial_sidebar_state="expanded", )
 
 # IT SHOULD CONTAIN ALL THE LIBRARIES NEEDED FOR YOUR APP TO RUN
 
+# CSS - cascading style sheets
+# HTML - HYPERTEXT MARKUP LANGUAGE
 
 import streamlit.components.v1 as components
 #keyboard shorcut
@@ -22,8 +24,8 @@ url="data/dataonline.csv"
 
 
 
-st.sidebar.header("Amazure Online Shop")
-
+st.sidebar.header("Amazon Retail Shop !!!!")
+st.balloons()
 data = st.sidebar.file_uploader("Upload Dataset", type=['csv', 'txt', 'xlsx'])
 
 ## WIDGETS 
