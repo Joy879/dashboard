@@ -26,24 +26,24 @@ url="data/dataonline.csv"
 
 st.sidebar.header("Amazon Retail Shop !!!!")
 st.balloons()
-data = st.sidebar.file_uploader("Upload Dataset", type=['csv', 'txt', 'xlsx'])
+# data = st.sidebar.file_uploader("Upload Dataset", type=['csv', 'txt', 'xlsx'])
 
-## WIDGETS 
-# """IF STATEMENTS"""
-if data is not None:
-        df = pd.read_csv(data)
-        df["Revenue"] = df["UnitPrice"] * df["Quantity"]
-        df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"])
-        df["InvoiceMonth"] = pd.DatetimeIndex(df["InvoiceDate"]).month
-        df["InvoiceYear"] = pd.DatetimeIndex(df["InvoiceDate"]).year
+# ## WIDGETS 
+# # """IF STATEMENTS"""
+# if data is not None:
+#         df = pd.read_csv(data)
+#         df["Revenue"] = df["UnitPrice"] * df["Quantity"]
+#         df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"])
+#         df["InvoiceMonth"] = pd.DatetimeIndex(df["InvoiceDate"]).month
+#         df["InvoiceYear"] = pd.DatetimeIndex(df["InvoiceDate"]).year
 
-else:
+# else:
 
-    df = pd.read_csv(url, encoding="ISO-8859-1", low_memory=False)
-    df["Revenue"] = df["UnitPrice"] * df["Quantity"]
-    df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"])
-    df["InvoiceMonth"] = pd.DatetimeIndex(df["InvoiceDate"]).month
-    df["InvoiceYear"] = pd.DatetimeIndex(df["InvoiceDate"]).year
+df = pd.read_csv(url, encoding="ISO-8859-1", low_memory=False)
+df["Revenue"] = df["UnitPrice"] * df["Quantity"]
+df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"])
+df["InvoiceMonth"] = pd.DatetimeIndex(df["InvoiceDate"]).month
+df["InvoiceYear"] = pd.DatetimeIndex(df["InvoiceDate"]).year
 
 
 # # Use the full page instead of a narrow central column
